@@ -7,7 +7,7 @@ Unity is a great platform used for building a variety of applications. From Game
 ## Description of Layout
 When you start up Unity, you will see a default layout something like this:
 
-![Layout Image](../layout.jpg?raw=true)
+![Layout Image](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/layout.png?raw=true)
 
 The Unity Layout is separated into many sections with different purposes. For this tutorial we will look at the basic sections:
 * **Project:** Assets and Models are stored (Much like a file manager)
@@ -22,11 +22,11 @@ Any Unity developer will find themselves interacting with these sections for any
 ## Lesson 1: Creating a Moving Cube
 To make a moving cube we first need to create a cube. The way to create basic objects is through the *Hierarchy* section.
 
-![Hierarchy Image](./)
+![Hierarchy Image](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/hierarchy.png?raw=true)
 
 By right clicking in the Hierarchy, we can see many things that we can add like Empty Objects, 3D Objects, Lights, Cameras, etc. As we want to create a cube, we will hover over 3D Object, and select a cube now. We have a cube in the scene. However, we might want to navigate around the scene to better see the cube. 
 
-![Controls]()
+![Controls](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/controls.png?raw=true)
 
 At the top left, there is a task bar with different settings that will allow you to do different actions in the scene:
 * **Hand Tool:** Used to pan (rotate on right click) in scene to move viewpoint (shortcut: middle mouse button)
@@ -39,12 +39,10 @@ Furthermore, one can go forward and backward in the scene by using the scroll wh
 
 Now, let us take a look at the inspector. Double click on the cube in the scene. It will bring you to a closer view of the cube in the scene (in case you lost it). On the right side, you should also see the details of the cube in the inspector. You can try using the scale / rotate tool or you can try changing the transform properties of the object.
 
-![Box Collider]()
-
+![Box Collider](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/box.png?raw=true)
 You should also see the box collider component on the cube. A cube automatically has a box collider to deal with physics. Before we start making our cube move, let us start with the "groundwork." We will first make a plane to act as ground so that we can give our cube gravity so that it does not just float through the air. This is simple in Unity, by making a plane below the cube in the hierarchy, and then adding a rigid body component to the cube while turning on gravity. Congratulations, you have successfully created gravity in Unity. 
 
-![Update Project]()
-
+![Update Project](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/material.png?raw=true)
 We can know add colour to our monotonic world by creating materials in our project folder. Specifically, right clicking in a the project section will allow you to *Create > Material*. Then, you can change the colour properties in the inspector and drag these materials onto objects into the scene to give those objects that specific colour property.
 
 Now all that is left is to make our cube move. In order to do this, we need to use **Scripting**. We will start creating a C# script (Unity's scripting language), by making a new script in the project. Again, *Right Click > Create > C# Script*. Name the script and open it in Visual Studios or another editor of your choice.
@@ -177,8 +175,8 @@ public class CameraController : MonoBehaviour
 Now, our Moving Box is Complete.
 
 ## Lesson 2: Humanoid Player & Wall Destroyer Game
-![Animation Tree]()
-
+![Animation Controller](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/controller.png?raw=true)
+![Animation Tree](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/tree.png?raw=true)
 Here, we first will take our model and have Unity perform it Rigging on it along with making an avatar for it by using the inspector. Then, we will have to set up our Animation Controller to animate the figure based on certain parameters. For us, we will have the parameters ChangeX, ChangeY, and Punch. The ChangeX and ChangeY components we will make part of a Blend Tree for motion while the Punch will be controlled by a separate parameter that will tell the controller when to animate the punch or to walk. This is simply a set up of an animation controller which can be done using a 2D Blending System. I go over this in detail in the Workshop. Watch the recording for the specifics.
 
 After, we have the Animation Controller Set Up, we will have to move on to editing our previous Movement Script to know edit the parameters in the animator. 
@@ -244,7 +242,7 @@ public class PlayerController : MonoBehaviour
     }
 }
 ```
-![Trigger Component]()
+![Trigger Component](https://github.com/aaggarwal10/7WC-GameDev/blob/main/Images/trigger.png?raw=true)
 
 Now, our movement of the character should be complete. To add the wall breaking component, we need to look at the collisions between colliders. If you recall with the rigid body before we used Unity's inbuilt engine to work out the collisions for us. However, in some cases, we do not want to actually have collision physics, but instead only want to check if two objects collide. We can do this through a OnTrigger Script. Simply, what an OnTrigger event does is it checks when a Trigger object collides with a Non-Trigger Object. Using an on Trigger Exit we can simply look for collision through the script:
 ```C#
